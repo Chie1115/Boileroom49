@@ -1,14 +1,6 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", () => {
     let toDoList = []; // Array to hold all the tasks
-    // Class that acts as a template for creating task objects
-    class Task {
-        constructor(taskID, taskDescription, isCompleted) {
-            this.taskID = taskID;
-            this.taskDescription = taskDescription;
-            this.isCompleted = isCompleted;
-        }
-    }
     // Getting the elements from the HTML document and assigning them to variables
     const taskForm = document.getElementById("taskForm");
     const taskInput = document.getElementById("taskInput");
@@ -37,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     searchInput.addEventListener("input", updateTaskElements);
     // Function to add a new task to the list
     function createNewTask(description) {
-        const newTask = new Task(Date.now(), description, false);
+        const newTask = { taskID: Date.now(), taskDescription: description, isCompleted: false };
         toDoList.push(newTask);
         saveToLocalStorage();
     }
@@ -136,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Load tasks from localStorage when the page loads
     const savedTasks = localStorage.getItem("toDoList");
     if (savedTasks) {
-        toDoList = JSON.parse(savedTasks).map((task) => new Task(task.taskID, task.taskDescription, task.isCompleted));
+        toDoList = JSON.parse(savedTasks).map((task) => ({ taskID: task.taskID, taskDescription: task.taskDescription, isCompleted: task.isCompleted }));
         updateTaskElements();
     }
     function saveToLocalStorage() {

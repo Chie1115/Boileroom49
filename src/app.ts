@@ -1,13 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     let toDoList: Task[] = []; // Array to hold all the tasks
 
-    // Class that acts as a template for creating task objects
-    class Task {
-        constructor(
-            public taskID: number,
-            public taskDescription: string,
-            public isCompleted: boolean
-        ) {}
+    // Interface that defines the structure of a task object
+    interface Task {
+        taskID: number;
+        taskDescription: string;
+        isCompleted: boolean;
     }
 
     // Getting the elements from the HTML document and assigning them to variables
@@ -44,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to add a new task to the list
     function createNewTask(description: string): void {
-        const newTask = new Task(Date.now(), description, false);
+        const newTask: Task = { taskID: Date.now(), taskDescription: description, isCompleted: false };
         toDoList.push(newTask);
         saveToLocalStorage();
     }
@@ -164,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Load tasks from localStorage when the page loads
     const savedTasks = localStorage.getItem("toDoList"); 
     if (savedTasks) {
-        toDoList = JSON.parse(savedTasks).map((task: any) => new Task(task.taskID, task.taskDescription, task.isCompleted)); 
+        toDoList = JSON.parse(savedTasks).map((task: any) => ({ taskID: task.taskID, taskDescription: task.taskDescription, isCompleted: task.isCompleted })); 
         updateTaskElements(); 
     }
 
