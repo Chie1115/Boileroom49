@@ -1,0 +1,134 @@
+body {
+    font-family: sans-serif;
+    background-color: gray;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: gray;
+    padding: 2rem 4rem;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+}
+
+h1 {
+    margin: 2rem;
+}
+
+form {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1rem;
+    margin: 2rem;
+    justify-content: center;
+}
+
+form p {
+    grid-column: 1 / span 2;
+    font-size: 2rem;
+    color: #c9302c;
+}
+
+form input {
+    padding: 0.5rem;
+    border: 1px solid #333;
+    border-radius: 0.5rem;
+}
+
+form button {
+    background-color: aquamarine;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: aqua;
+}
+
+li {
+    list-style: none;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+li p {
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 20px;
+}
+
+li.completed {
+    border: 1px solid green;
+}
+
+li button {
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.completeButton {
+    background-color: green;
+}
+
+.completeButton:hover {
+    background-color: darkgreen;
+}
+
+.deleteButton {
+    background-color: #d9534f;
+}
+
+.deleteButton:hover {
+    background: #c9302c;
+}
+
+.controls {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+.editButton {
+    background-color: #4c77af; /* Ändra detta värde till den färg du vill använda */
+    color: white; /* Textfärg */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px; /* Gör knappen lite rundad */
+    margin-left: 5px; /* Lägger lite avstånd mellan knapparna */
+}
+
+
+
+
+#filterSelect, #sortSelect, #searchInput {
+    padding: 8px;
+    font-size: 1rem;
+}
+
+#taskList li {
+    margin: 10px 0;
+    padding: 10px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.completeButton, .deleteButton, .editButton {
+    margin-left: 10px;
+}
+
+.saveButton {
+    color: rgb(0, 0, 0);
+}
