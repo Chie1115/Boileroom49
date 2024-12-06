@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // If the input is empty, show an error message and stop further execution
         if (taskDescription === "") {
-            message.innerText = "Du måste ange en uppgift.";
+            message.innerText = "You must enter a task.";
             return;
         }
 
@@ -86,17 +86,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const completeTask = document.createElement("button");
             completeTask.className = "completeButton"; 
-            completeTask.textContent = task.isCompleted ? "Ångra" : "Markera uppgift som klar";
+            completeTask.textContent = task.isCompleted ? "Undo" : "Mark task as completed";
             completeTask.addEventListener("click", () => markAsCompleteToDo(task.taskID));
 
             const deleteTask = document.createElement("button");
             deleteTask.className = "deleteButton";
-            deleteTask.textContent = "Ta bort uppgift"; 
+            deleteTask.textContent = "Delete task"; 
             deleteTask.addEventListener("click", () => deleteToDo(task.taskID)); 
 
             const editTask = document.createElement("button");
             editTask.className = "editButton";
-            editTask.textContent = "Redigera uppgift";
+            editTask.textContent = "Edit task";
             editTask.addEventListener("click", () => editToDo(task.taskID));
 
             showTask.appendChild(showDescription); 
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
             inputField.className = "editInput";
     
             const saveButton = document.createElement("button");
-            saveButton.textContent = "Spara";
+            saveButton.textContent = "Save";
             saveButton.className = "saveButton";
     
             saveButton.addEventListener("click", () => {

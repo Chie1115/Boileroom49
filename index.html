@@ -3,31 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do Applikation</title>
+    <title>To-Do Application</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>To-Do Applikation</h1>
+        <h1>To-Do Application</h1>
         <form id="taskForm">
-            <input type="text" id="taskInput" placeholder="Ange en ny uppgift"> 
-            <button type="submit">Lägg till i To-Do List</button>
+            <input type="text" id="taskInput" placeholder="Enter a new task"> 
+            <button type="submit">Add to To-Do List</button>
             <p id="message"></p>
         </form>
 
         <div class="controls">
             <select id="filterSelect">
-                <option value="all">Visa alla</option>
-                <option value="completed">Klara</option>
-                <option value="not_completed">Ej klara</option>
+                <option value="all">Show all</option>
+                <option value="completed">Completed</option>
+                <option value="not_completed">Not completed</option>
             </select>
 
             <select id="sortSelect">
-                <option value="date">Sortera efter senaste</option>
-                <option value="status">Sortera efter ej klara</option>
+                <option value="date">Sort by latest</option>
+                <option value="status">Sort by not completed</option>
             </select>
 
-            <input type="text" id="searchInput" placeholder="Sök uppgifter">
+            <input type="text" id="searchInput" placeholder="Search tasks">
         </div>
 
         <ul id="taskList"></ul>
